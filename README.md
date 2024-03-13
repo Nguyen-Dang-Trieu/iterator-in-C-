@@ -74,21 +74,26 @@ int main()
         ar.begin()           ar.end()           */
     vector<int>::iterator ptr = ar.begin(); 
       
-    // Using advance() to increment iterator position 
-    advance(ptr, 3);  // advance(iterator, số lần di chuyển);
-       
+    // ------ Using advance() to increment iterator position ---------
+    
+    // advance(iterator, số lần di chuyển)
+    advance(ptr, 3);  // + số dương: di chuyển tới 
     // Displaying iterator position 
-    cout << "The position of iterator after advancing is : "; 
-    cout << *ptr << " "; 
-      
+    cout << "The position of iterator after advance(ptr, 3) is : " << *ptr << endl;
+    
+    advance(ptr,-2);  // - số âm: di chuyển lùi
+    // Displaying iterator position 
+    cout << "The position of iterator after advance(ptr,-2) is : " << *ptr << endl;
+       
     return 0; 
-      
 } 
 ~~~
 Output:
 ~~~cpp
-The position of iterator after advancing is: 23
+The position of iterator after advance(ptr, 3) is: 23
+The position of iterator after advance(ptr,-2) is: 11
 ~~~
+
 ## 3. next() - prev()
 ~~~cpp
 #include<iostream> 
@@ -123,4 +128,6 @@ int main()
 ~~~
 Output:
 ~~~cpp
+The position of new iterator using next() is: 11
+The position of new iterator using prev() is: 45
 ~~~
