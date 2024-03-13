@@ -19,11 +19,11 @@ int main()
       
     // ---- Declaring iterator to a vector ------
     /* Ta hiểu như này:
-    
-     ar =  7  11  45  23  19  (0)
-           ^                   ^
-           |                   |
-       ar.begin()           ar.end()
+     index  0  1   2   3   4 
+      ar =  7  11  45  23  19  (0)
+            ^                   ^
+            |                   |
+        ar.begin()           ar.end()
     */
     // Cách 1:
     vector<int>::iterator ptr1 = ar.begin();
@@ -52,4 +52,75 @@ Output:
 Phần tử first của vector: 7
 Phần tử end của vector: 0
 The vector elements are: 7 11 45 23 19
+~~~
+
+## 2.  advance()
+This function is used to *increment the iterator position till the specified number mentioned in its arguments*.
+~~~cpp
+#include<iostream> 
+#include<iterator> // for iterators 
+#include<vector>   // for vectors 
+using namespace std; 
+int main() 
+{ 
+    vector<int> ar = { 7, 11, 45, 23, 19 }; 
+      
+    // Declaring iterator to a vector
+    /*
+     index  0  1   2   3   4 
+      ar =  7  11  45  23  19  (0)
+            ^                   ^
+            |                   |
+        ar.begin()           ar.end()           */
+    vector<int>::iterator ptr = ar.begin(); 
+      
+    // Using advance() to increment iterator position 
+    advance(ptr, 3);  // advance(iterator, số lần di chuyển);
+       
+    // Displaying iterator position 
+    cout << "The position of iterator after advancing is : "; 
+    cout << *ptr << " "; 
+      
+    return 0; 
+      
+} 
+~~~
+Output:
+~~~cpp
+The position of iterator after advancing is: 23
+~~~
+## 3. next() - prev()
+~~~cpp
+#include<iostream> 
+#include<iterator> // for iterators 
+#include<vector>   // for vectors 
+using namespace std; 
+int main() 
+{ 
+    vector<int> ar = { 7, 11, 45, 23, 19 };
+      
+    // Declaring iterators to a vector 
+    vector<int>::iterator ptr = ar.begin(); 
+    vector<int>::iterator ftr = ar.end(); 
+     
+     
+    // Using next() to return new iterator 
+    auto it = next(ptr, 0);  // next(iterator, số lần di chuyển)
+    it = next(ptr,1);
+      
+    // Using prev() to return new iterator 
+    auto it1 = prev(ftr, 3);  // prev(iterator, số lần di chuyển)
+      
+    // Displaying iterator position 
+    cout << "The position of new iterator using next() is : " << *it << endl;
+
+      
+    // Displaying iterator position 
+    cout << "The position of new iterator using prev()  is : " << *it1 << endl; 
+      
+    return 0;  
+} 
+~~~
+Output:
+~~~cpp
 ~~~
