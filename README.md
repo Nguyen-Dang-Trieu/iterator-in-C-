@@ -131,3 +131,34 @@ Output:
 The position of new iterator using next() is: 11
 The position of new iterator using prev() is: 45
 ~~~
+
+## 4 - insert()
+~~~cpp
+#include<iostream>
+#include<iterator>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    vector<int> ar = { 7, 11, 45, 23, 19 };
+    vector<int>::iterator ptr = ar.begin(); // iterator pointing to the beginning of ar
+
+    // Sử dụng advance để di chuyển iterator ptr đến vị trí muốn chèn
+    advance(ptr, 3);
+
+    // Chèn phần tử 100 vào vector ar sau vị trí mà iterator ptr đang trỏ đến
+    ar.insert(ptr, 100);
+
+    // In ra vector sau khi chèn
+    cout << "Vector sau khi chèn phần tử 100 là: ";
+    for (int &x : ar)
+        cout << x << " ";
+
+    return 0;
+}
+~~~
+Output:
+~~~cpp
+Vector sau khi chèn phần tử 100 là: 7 11 45 100 23 19
+~~~
