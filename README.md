@@ -1,4 +1,4 @@
-# iterator-in-C++
+# iterator in C++
 
 **Conference:** https://www.geeksforgeeks.org/iterators-c-stl/
 
